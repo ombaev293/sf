@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кофейня "Заварим!"</title>
+    <link rel="stylesheet" href="styl.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6F4F37;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .coffee-menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .coffee-item {
+            text-align: center;
+        }
+
+        .coffee-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #6F4F37;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #6F4F37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5c4329;
+        }
+
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #scrollToTop:hover {
+            background-color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .coffee-menu {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .reviews-list {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .review-item {
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Кофейня "Заварим!"</h1>
+        <p>Твой уютный уголок с ароматным кофе</p>
+    </header>
+
+    <nav>
+        <a href="#menu">Меню</a>
+        <a href="#order">Заказать</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+    <div class="container">
+        <section id="menu">
+            <h2 class="section-title">Наше меню</h2>
+            <div class="coffee-menu">
+                <div class="coffee-item">
+                    <img src="C:\Users\21\Desktop\кофе 2\R (2).jfif" alt="Эспрессо">
+                    <h3>Эспрессо</h3>
+                    <p>Классический крепкий кофе, идеально подходящий для начала дня.</p>
+                </div>
+                <div class="coffee-item">
+                    <img src="C:\Users\21\Desktop\кофе 2\OIP.jfif" alt="Латте">
+                    <h3>Латте</h3>
+                    <p>Кофе с молоком, приятный и нежный вкус для утреннего наслаждения.</p>
+                </div>
+                <div class="coffee-item">
+                    <img src="C:\Users\21\Desktop\кофе 2\R (1).jfif" alt="Капучино">
+                    <h3>Капучино</h3>
+                    <p>Кофе с молочной пеной, создающая неповторимый вкус.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="order">
+            <h2 class="section-title">Заказать кофе</h2>
+            <form class="order-form" onsubmit="return validateForm()">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="coffee">Выберите кофе:</label>
+                <select id="coffee" name="coffee" required>
+                    <option value="espresso">Эспрессо</option>
+                    <option value="latte">Латте</option>
+                    <option value="cappuccino">Капучино</option>
+                </select>
+
+                <label for="message">Комментарий (по желанию):</label>
+                <textarea id="message" name="message" rows="4" placeholder="Напишите ваши пожелания"></textarea>
+
+                <button type="submit">Оформить заказ</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Контакты</h2>
+            <p>Мы находимся по адресу: ул. Кофейная, 15, Москва</p>
+            <p>Телефон: +7 (495) 123-45-67</p>
+            <p>Email: <a href="mailto:info@coffeebar.com">info@coffeebar.com</a></p>
+            <div class="social-icons">
+                <p>Следите за нами в социальных сетях:</p>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="C:\Users\21\Downloads\OIP (2).jfif" alt="Instagram">
+                </a>
+                <a href="https://facebook.com" target="_blank">
+                    <img src="C:\Users\21\Downloads\Facebook_Logo_(2019).png.webp" alt="Facebook">
+                </a>
+            </div>
+        </script>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6745.661045660844!2d69.40409992820705!3d53.29040679877824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424c94f9fd626401%3A0xbc5c6598650d4b91!2z0JHQuNGB0LrQstC40YI!5e0!3m2!1sru!2skz!4v1733372056207!5m2!1sru!2skz" width="850" height="850" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+        </section>
+        <section id="reviews">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <div class="reviews-list">
+                <div class="review-item">
+                    <p>"Лучший латте в городе! Очень уютная атмосфера." — Ирина</p>
+                </div>
+                <div class="review-item">
+                    <p>"Прекрасное место для утреннего кофе с друзьями." — Александр</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Кофейня "Заварим!". Все права защищены.</p>
+    </footer>
+
+    <button id="scrollToTop" onclick="scrollToTop()">Наверх</button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function validateForm() {
+            let name = document.getElementById('name').value;
+            let coffee = document.getElementById('coffee').value;
+            if (!name || !coffee) {
+                alert('Пожалуйста, заполните все обязательные поля.');
+                return false;
+            }
+            return true;
+        }
+
+        function initMap() {
+            const location = { lat: 55.7558, lng: 37.6173 }; // Координаты для Москвы
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: location,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+            });
+        }
+    </script>
+</body>
+</html>
+
